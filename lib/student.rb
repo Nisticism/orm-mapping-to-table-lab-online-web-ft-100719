@@ -24,8 +24,10 @@ class Student
     CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT, grade INTEGER)
     word
     
-    sql.execute
+    DB[:conn].execute(sql)
     
   end
+  
+  def 
   
 end
