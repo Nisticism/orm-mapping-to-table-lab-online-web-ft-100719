@@ -20,14 +20,25 @@ class Student
   end
   
   def self.create_table
-    sql = <<-word 
+    sql = <<-SQL 
     CREATE TABLE students (id INTEGER PRIMARY KEY, name TEXT, grade INTEGER)
-    word
+    SQL
     
     DB[:conn].execute(sql)
     
   end
   
-  def 
+  def self.drop
+    
+  end
+  
+  def save
+    sql = <<-SQL
+      INSERT INTO students (id, name, grade) 
+      VALUES (?, ?, ?)
+    SQL
+ 
+    DB[:conn].execute(sql, self.name, self.album)
+  end
   
 end
